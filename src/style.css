@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f6f6f6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.to-do-container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 2px;
+  width: 80%;
+  max-width: 550px;
+  margin: 37vh auto;
+  background-color: #fff;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0 4px 8px 0 rgba(34, 60, 80, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(34, 60, 80, 0.2);
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+ul li {
+  display: grid;
+  grid-template-columns: 1fr 17fr 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff;
+  border-bottom: 2px solid #ececec;
+}
+
+.fa-trash-alt {
+  display: none;
+}
+
+.change .fa-trash-alt {
+  content: "\f2ed";
+  color: #8f8f8f;
+  display: inline;
+  cursor: pointer;
+}
+
+.fa-share {
+  color: #bcbbbd;
+}
+
+.fa-sync {
+  color: #8f8d8f;
+}
+
+.main-title,
+form {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 2px solid #ececec;
+}
+
+#to-do-content {
+  font-size: 0.93rem;
+  border: none;
+  font-style: italic;
+}
+
+#to-do-content:focus {
+  outline: none;
+}
+
+.to-do-item {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+
+textarea {
+  border: none;
+  resize: none;
+  font-size: 1rem;
+  width: 80%;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.check textarea {
+  text-decoration: line-through;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  content: '';
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #adb5bd;
+  border-radius: 0.25em;
+  margin-right: 12px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+input[type="checkbox"]:checked {
+  border-color: #fff;
+  background-image: url("/img/check.png");
+  background-size: 20px;
+}
+
+button {
+  border: none;
+}
+
+.task-btn {
+  background-color: transparent;
+}
+
+.clear-all-btn {
+  color: #6b6a6b;
+  border: none;
+  padding: 1rem;
+}
+
+.clear-all-btn:hover {
+  color: #000;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#icons {
+  color: rgba(0, 0, 0, 0.24);
+  font-size: 0.5rem;
+}
