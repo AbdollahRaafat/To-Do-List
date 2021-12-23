@@ -5,20 +5,22 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build",
     "start": "webpack serve --open --mode=development",
     "build": "webpack --mode=development"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rdnrn/to-do-list.git"
+    "url": "git+https://github.com/AbdollahRaafat/To-Do-List.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rdnrn/to-do-list/issues"
+    "url": "https://github.com/AbdollahRaafat/To-Do-List/issues"
   },
-  "homepage": "https://github.com/rdnrn/to-do-list#readme",
+  "homepage": "https://github.com/AbdollahRaafat.github.io/To-Do-List",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.5.1",
@@ -26,6 +28,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.25.3",
     "express": "^4.17.1",
+    "gh-pages": "^3.2.3",
     "hint": "^6.1.9",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
