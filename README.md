@@ -12,6 +12,13 @@
 - HTML, CSS 
 - JavaScript, Webpack
 
+## Get a copy
+
+- Prepare a local directory. 
+- Open terminal.
+- Clone this project by the command `git clone URL/repository_name.git`.
+- Open `index.html` in your local browser.
+
 ## Getting Started
 
 To get a local copy up and running follow these steps:
