@@ -4,9 +4,9 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+    "test": "jest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "webpack serve --open --mode=development",
     "build": "webpack --mode=development"
   },
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/AbdollahRaafat.github.io/To-Do-List",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.5",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.5.1",
     "eslint": "^7.32.0",
@@ -31,6 +32,7 @@
     "gh-pages": "^3.2.3",
     "hint": "^6.1.9",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.4.5",
     "style-loader": "^3.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",

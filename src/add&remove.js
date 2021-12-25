@@ -5,41 +5,27 @@ const newTaskForm = document.querySelector('[data-new-task-form]');
 const newTaskInput = document.querySelector('[data-new-task-input]');
 const clearCompletedTasksButton = document.querySelector('[data-delete-completed-tasks]');
 
-const createTask = (name) => ({
-  description: name,
-  complete: false,
-  id: Date.now().toString(),
-});
+function addTask(taskArray) {
+  const inputList = document.getElementById('inputList');
+  const task = {
+    description: inputList.value,
+    completed: false,
+    index: taskArray.length + 1,
+  };
+  taskArray.push(task);
+  localStorage.setItem('tasks', JSON.stringify(taskArray));
+  inputList.value = '';
+}
 
-const addTask = (e) => {
-  e.preventDefault();
-  const getTaskName = newTaskInput.value;
-  const task = createTask(getTaskName);
-  newTaskInput.value = null;
-  tasks.push(task);
-  save(tasks);
-  render(tasks);
-  document.location.reload();
-};
-
-const deleteItem = () => {
-  const listItems = document.querySelectorAll('li');
-  listItems.forEach((item, index) => {
-    item.addEventListener('click', (e) => {
-      const deleteBtn = e.target;
-      if (deleteBtn.classList[0] === 'far') {
-        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-        tasks = tasks.filter((task) => task !== tasks[index]);
-        item.remove();
-        save(tasks);
-        render(tasks);
-        document.location.reload();
-      }
-    });
+function deleteItem(taskArray, i) {
+  taskArray.splice(i, 1);
+  taskArray.forEach((task) => {
+    task.index = taskArray.indexOf(task) + 1;
   });
-};
+  localStorage.setItem('tasks', JSON.stringify(taskArray));
+}
 
-const editItem = () => {
+function editItem() {
   const itemValue = document.querySelectorAll('textarea');
   itemValue.forEach((item, index) => {
     item.addEventListener('keyup', () => {
@@ -47,7 +33,7 @@ const editItem = () => {
       save(tasks);
     });
   });
-};
+}
 
 export {
   newTaskForm,
