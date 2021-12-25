@@ -1,8 +1,6 @@
-import { render } from './process.js';
 import { save, tasks } from './storage.js';
 
 const newTaskForm = document.querySelector('[data-new-task-form]');
-const newTaskInput = document.querySelector('[data-new-task-input]');
 const clearCompletedTasksButton = document.querySelector('[data-delete-completed-tasks]');
 
 function addTask(taskArray) {
