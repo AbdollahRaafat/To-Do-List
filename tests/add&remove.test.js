@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import { addTask, deleteItem } from '../src/add&remove.js';
+import { addTask, deleteTask } from '../src/add&remove.js';
 
 describe('adding a task to the list', () => {
   document.body.innerHTML = '<input type="text" placeholder="Add to your list..." id="inputList">';
@@ -57,7 +57,7 @@ describe('deleting a task from the list', () => {
   ];
 
   test('Delete task with index 2', () => {
-    deleteItem(myTasks, 2);
+    deleteTask(myTasks, 2);
     expect((myTasks)).toHaveLength(3);
   });
 
